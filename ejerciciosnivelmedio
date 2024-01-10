@@ -1,0 +1,13 @@
+"""Define una función que utilice un bucle para imprimir los primeros n números de la serie de Fibonacci. """
+def fib(n):
+    a = 0
+    b = 1
+    
+    for k in range(n):
+        c = b+a
+        a = b
+        b = c
+        
+    return a
+
+fib(9)
