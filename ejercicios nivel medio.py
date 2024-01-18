@@ -193,6 +193,23 @@ def cadena_mas_larga(lista):
 print(cadena_mas_larga(["hoy", "es", "martes"]))
 
 """Define una función que reciba un número entero n y retorne una lista con los n primeros números primos."""
+def es_primo(num):
+   if num < 2:
+      return False
+   for i in range (2, int(num ** 0.5)+1):
+      if num % i == 0:
+         return False
+      return True
+
+def n_primeros_primos(n):
+   primos = []
+   numero = 2
+   while len(primos) < n:
+      if es_primo(numero):
+         primos.append(numero)
+      numero += 1
+   return primos
+print(n_primeros_primos(7))
 
 """Define una función que reciba una cadena y retorne la misma cadena pero con las palabras en orden inverso."""
 
@@ -201,11 +218,14 @@ def invertir_palabaras(cadena):
 print(invertir_palabaras("Hola, Buenos días"))
 
 """Escribe una función que reciba una lista de tuplas y retorne una lista ordenada basada en el último elemento de cada tupla."""
+def ordenar_ultimo_elemento(tuplas):
+   return sorted(tuplas, key=lambda x:[-1])
+print(ordenar_ultimo_elemento([(2,4),(6,8),(5,7)]))
 
 """Define una función que reciba una cadena y retorne la cantidad de letras vocales en la cadena."""
 def cantidad_vocales(cadena):
    return sum(1 for c in cadena.lower() if c in 'aeiou')
-print(contar_vocales("Hsta Mañana"))
+print(contar_vocales("Hasta Mañana"))
 
 """Define una función que reciba un número entero y retorne True si es un número primo, de lo contrario retorne False."""
 def es_primo(num):
